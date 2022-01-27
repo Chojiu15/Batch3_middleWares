@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const responseMiddle = require('./middlewares/responseWithMethodMiddleWare')
 const birdsRouter = require('./routes/birds')
+const secureRouter = require('./routes/secure')
 
 const PORT = process.env.PORT || 3002
 
@@ -36,7 +37,7 @@ const PORT = process.env.PORT || 3002
 
 
 app.use('/birds', birdsRouter)
-
+app.use('/secure', secureRouter)
 
 
 const filterGetMiddleware = (err,request, response, next) => {
